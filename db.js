@@ -45,10 +45,8 @@ function deleCustomers(id) {
       (customer) => customer.id === Number(id)
     );
     if (customerIndex === -1) return false;
-  
-    const customer = customers[customerIndex];
-     
-    customers.splice(customers[customerIndex], 1)
+       
+    customers.splice(customerIndex, 1)
   
     fs.writeFileSync("db.json", JSON.stringify(customers));
   
